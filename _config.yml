@@ -1,0 +1,8 @@
+baseurl: /ls
+author: 梨子c
+
+
+paginate: 4
+
+
+plugins: [jekyll-paginate]

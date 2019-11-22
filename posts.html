@@ -1,0 +1,30 @@
+---
+layout: header
+titles: 咸鱼翻身
+mintitle: 从此不再做咸鱼
+mintitles: Hello
+---
+<div id="about">
+<div class="container-fluid">
+	<div class="row">
+    	<div class="col-lg-8 col-md-10 mx-auto">
+      
+      <!-- 文章列表开始 -->
+      		{% for post in site.posts %}
+        	<div class="post-preview">
+          		<a href="{{site.baseurl}}{{post.url}}">
+            	<h2 class="post-title">{{post.title}}</h2>
+            	<h3 class="post-subtitle">{{post.excerpt|strip_html|truncate:100}}</h3>
+          		</a>
+          		<p class="post-meta">Posted by <a href="#">{{post.author|default:site.author}}</a> on {{post.date|date_to_long_string}}</p>
+        	</div>
+        		<hr>
+      			{% endfor %}
+          {% for post in paginator.posts %}
+		<div class="clearfix">
+        <a class="btn btn-primary float-left" href="{{paginator.previous.posts}}">上一页</a>
+        <a class="btn btn-primary float-right" href="{{paginator.next.posts}}">下一页</a>
+    </div>
+          {% endfor %}
+</div>
+</div>
