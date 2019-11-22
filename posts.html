@@ -20,11 +20,13 @@ mintitles: Hello
         	</div>
         		<hr>
       			{% endfor %}
-          {% for post in paginator.posts %}
 		<div class="clearfix">
+	{% for paginator.previous_page %}
         <a class="btn btn-primary float-left" href="{{paginator.previous.posts}}">上一页</a>
+	{% endfor %}
+	{% for paginator.previous_page %}
         <a class="btn btn-primary float-right" href="{{paginator.next.posts}}">下一页</a>
+	{% endfor %}
     </div>
-          {% endfor %}
 </div>
 </div>
